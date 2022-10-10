@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 const { Client, GatewayIntentBits } = require('discord.js');
 
 
-console.log('im working')
+console.log(process.env['TOKEN'])
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
 // when the bot starts up
 client.on("ready", () => {
@@ -22,6 +22,6 @@ client.on("messageCreate", message => {
 })
 
 // Add bot token in the "quotes" below
-client.login(process.env['DISCORD_KEY'])
+client.login(process.env['TOKEN'])
 
 
