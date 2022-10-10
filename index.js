@@ -1,9 +1,11 @@
+
 const Discord = require("discord.js")
 const { Client, GatewayIntentBits } = require('discord.js');
+const test = require('dotenv').config();
 
+console.log(process.env.TOKEN_DISCORD);
 
-console.log(process.env['TOKEN'])
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 // when the bot starts up
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`)
@@ -22,6 +24,6 @@ client.on("messageCreate", message => {
 })
 
 // Add bot token in the "quotes" below
-client.login(process.env['TOKEN'])
+client.login(process.env.TOKEN_DISCORD)
 
 
