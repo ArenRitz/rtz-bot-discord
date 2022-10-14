@@ -1,5 +1,5 @@
 const { REST, SlashCommandBuilder, Routes } = require('discord.js');
-require('dotenv').config();
+const dotenv = require('dotenv').config();
 
 const clientId = process.env.CLIENT_ID;
 const guildId = process.env.GUILD_ID;
